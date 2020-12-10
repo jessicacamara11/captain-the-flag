@@ -6,11 +6,8 @@ import java.util.List;
 
 public class Deck {
 
-    List<Card> cards;
+    List<Card> cards = new LinkedList<>();
 
-    public Deck(List<Card> cards) {
-        this.cards = cards;
-    }
 
     public void assemble() {
 
