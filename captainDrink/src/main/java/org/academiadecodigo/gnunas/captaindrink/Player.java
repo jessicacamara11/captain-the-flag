@@ -5,7 +5,7 @@ import java.util.List;
 public class Player {
 
     private String name;
-    private int drinksCounter;
+    private int drinksCounter = 0;
 
 
     public String getName() {
@@ -22,5 +22,8 @@ public class Player {
 
     public void setDrinksCounter(int drinksCounter) {
         this.drinksCounter = drinksCounter;
+    }
+    public void drink(){
+        drinksCounter++;
     }
 }
