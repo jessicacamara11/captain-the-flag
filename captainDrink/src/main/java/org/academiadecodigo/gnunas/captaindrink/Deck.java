@@ -1,0 +1,38 @@
+package org.academiadecodigo.gnunas.captaindrink;
+
+import java.util.Collections;
+import java.util.LinkedList;
+import java.util.List;
+
+public class Deck {
+
+    List<Card> cards;
+
+    public Deck(List<Card> cards) {
+        this.cards = cards;
+    }
+
+    public void assemble() {
+
+        for (Card.Suit suit : Card.Suit.values()) {
+            assembleCardsWithSuit(suit);
+        }
+    }
+
+    public void shuffle() {
+
+        Collections.shuffle(cards);
+    }
+
+    private void assembleCardsWithSuit(Card.Suit suit) {
+
+        for (Card.Rank rank : Card.Rank.values()) {
+            cards.add(new Card(rank, suit));
+        }
+    }
+
+    public Card draw() {
+
+        return cards.remove(0);
+    }
+}
