@@ -12,14 +12,14 @@ import java.util.List;
 
 @CrossOrigin(origins = "*")
 @RestController
-@RequestMapping("/captaindrink")
+@RequestMapping("")
 public class GameController {
 
     private Game game;
     private ServletContext servletContext;
 
     @Autowired
-    public GameController(Game game) {
+    public void setGame(Game game) {
         this.game = game;
     }
 
@@ -28,9 +28,11 @@ public class GameController {
         this.servletContext = servletContext;
     }
 
-    @RequestMapping(method = RequestMethod.POST, path = "")
+    @PostMapping("/new")
     public ResponseEntity<?> newPlayer(@RequestBody Player player) {
-
+        System.out.println("Player:"+ player.getName());
+        Player newPlayer = new Player();
+        newPlayer.setName(player.getName());
         game.addPlayer(player);
 
         return new ResponseEntity<>(HttpStatus.CREATED);

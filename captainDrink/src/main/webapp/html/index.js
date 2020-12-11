@@ -23,54 +23,14 @@ function renderList(customerList) {
     })
 
 }
-function getCustomer(id) {
 
-    $.ajax({
-        url:'http://localhost:8080/javabank/api/customer/' + id,
-        type: 'GET',
-        success: displayEditForm,
-        error: errorCallback
-    });
-}
 function displayForm() {
     $('#form').addClass('visible').removeClass('invisible');
     $('#edit-customer').addClass('visible').addClass('invisible');
     $('#new-customer').click(createCustomer);
 }
-function displayEditForm(customer) {
-    $('#form').addClass('visible').removeClass('invisible');
-    $('#new-customer').addClass('visible').addClass('invisible');
-    //console.log(customer);
 
 
-    $('#edit-customer').click(submitCustomer(customer.id));
-
-    $('#name').val(customer.name);
-    $('#email').val(customer.email);
-    $('#phone').val(customer.telephoneNumber);
-
-}
-function submitCustomer(id) {
-    console.log(id);
-
-    return function(event) {
-        event.preventDefault();
-        $('#form').addClass('invisible').removeClass('visible');
-
-        $.ajax({
-            url:'http://localhost:8080/javabank/api/customer/' + id,
-            type: 'PUT',
-            data : JSON.stringify({
-                name: $('#name').val(),
-                email: $('#email').val(),
-                telephoneNumber: $('#phone').val()
-            }),
-            contentType: 'application/json',
-            success: getList,
-            error: errorCallback
-        });
-    }
-}
 function deleteCustomer(id) {
     $.ajax({
         url:'http://localhost:8080/javabank/api/customer/' + id,
@@ -86,11 +46,10 @@ function createCustomer(event) {
     event.preventDefault();
     $('#form').addClass('invisible').removeClass('visible');
     $.ajax({
-        url: 'http://localhost:8080/captaindrink',
+        url: 'http://localhost:8080/captaindrink/new',
         method: 'POST',
         data: JSON.stringify({
             name: $('#name').val()
-
         }),
         async: true,
         contentType: 'application/json',
