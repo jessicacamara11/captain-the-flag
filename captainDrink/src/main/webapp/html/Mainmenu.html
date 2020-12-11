@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Captain Drink</title>
+
+    <link rel="stylesheet" type="text/css" href="Stylesheet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+          modelType="text/css"/>
+    <script modelType="application/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script modelType="application/javascript" async
+            src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="./index.js" defer></script>
+
+</head>
+
+<body>
+<div>
+    <table id="customers-table" class="table table-striped">
+
+    </table>
+</div>
+<div>
+    <button id="add-new-customer"class="button" type="button">
+        <div class="pattern">
+            <div class="target inner bg1"></div>
+        </div>
+        <div class="text">Add Player</div>
+    </button>
+    <button id="play" class="button">
+        <div class="pattern">
+            <div class="target inner bg2"></div>
+        </div>
+        <div class="text">Play</div>
+    </button>
+    <button id="rules" class="button">
+        <div class="pattern">
+            <div class="target inner bg3"></div>
+        </div>
+        <div class="text">Rules</div>
+    </button>
+
+</div>
+<div id="div-form">
+    <form id="form" method="post" class="invisible">
+        <div class="form-newCustomer">
+            <Label> Player's name</Label>
+            <input type="text" id="name" class="form-control" aria-describedby="nameHelp"
+                   placeholder="Enter your name" />
+        </div>
+        <div>
+            <button id="new-customer" class="btn btn-primary" class='invisible' type="submit">Join</button>
+
+        </div>
+    </form>
+</div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
