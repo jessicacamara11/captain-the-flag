@@ -12,7 +12,6 @@ import java.util.List;
 
 @CrossOrigin(origins = "*")
 @RestController
-@RequestMapping("")
 public class GameController {
 
     private Game game;
@@ -28,12 +27,14 @@ public class GameController {
         this.servletContext = servletContext;
     }
 
+
     @PostMapping("/new")
     public ResponseEntity<?> newPlayer(@RequestBody Player player) {
         System.out.println("Player:"+ player.getName());
         Player newPlayer = new Player();
         newPlayer.setName(player.getName());
         game.addPlayer(player);
+
 
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
@@ -45,11 +46,18 @@ public class GameController {
     }
 
     @GetMapping("/card")
+    public ResponseEntity<Card> getCard() {
+
+
+       return new ResponseEntity<>(game.getRandomCard(), HttpStatus.OK);
+    }
+
+    /*@GetMapping("/card")
     public Resource getCardImage() {
 
         String path = game.getRandomCard().getImgPath();
-        return new ServletContextResource(servletContext, "/resources/" + path);
-    }
+        return new ServletContextResource(servletContext, "/resources/image.png");
+    }*/
 
     @GetMapping("/player")
     public ResponseEntity<Player> getRandomPlayer() {

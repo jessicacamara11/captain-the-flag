@@ -6,13 +6,14 @@ import java.util.List;
 
 @Component
 public class Game {
-    private List<Player> players = new LinkedList<>(
 
-    );
+    private List<Player> players = new LinkedList<>();
     private Deck deck;
 
     public Game(){
         deck = new Deck();
+        deck.assemble();
+        deck.shuffle();
     }
     public void addPlayer(Player player){
         players.add(player);
@@ -22,7 +23,7 @@ public class Game {
         return players.get(randomNumber);
     }
     public int getRandomNumber() {
-        return (int) Math.floor(Math.random()* players.size());
+        return (int) (Math.floor(Math.random()* players.size()));
     }
     public Card getRandomCard(){
         return deck.draw();

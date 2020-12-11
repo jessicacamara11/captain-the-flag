@@ -29,7 +29,8 @@ public class Deck {
     }
 
     public Card draw() {
+        int randomNumber = (int) (Math.random() * cards.size());
 
-        return cards.remove(0);
+        return cards.get(randomNumber);
     }
 }
