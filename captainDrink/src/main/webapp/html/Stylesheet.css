@@ -15,7 +15,7 @@ body {
     height: 100vh;
     justify-content: center;
     margin: 0;
-    background-image: url("https://cdn.thecoolist.com/wp-content/uploads/2017/02/California-Kings-drinking-game.png");
+    background-image: url("CaptainDrink.png");
 }
 .button {
     -webkit-tap-highlight-color: transparent;
