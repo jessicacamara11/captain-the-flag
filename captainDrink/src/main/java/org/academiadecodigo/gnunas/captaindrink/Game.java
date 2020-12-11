@@ -1,10 +1,12 @@
 package org.academiadecodigo.gnunas.captaindrink;
 import org.springframework.stereotype.Component;
+
+import java.util.LinkedList;
 import java.util.List;
 
 @Component
 public class Game {
-    private List<Player> players;
+    private List<Player> players = new LinkedList<>();
     private Deck deck;
 
     public Game(){

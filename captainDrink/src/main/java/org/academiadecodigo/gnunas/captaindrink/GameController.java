@@ -12,7 +12,6 @@ import java.util.List;
 
 @CrossOrigin(origins = "*")
 @RestController
-@RequestMapping("/captaindrink")
 public class GameController {
 
     private Game game;
@@ -28,10 +27,13 @@ public class GameController {
         this.servletContext = servletContext;
     }
 
-    @RequestMapping(method = RequestMethod.POST, path = "")
+    @RequestMapping(method = RequestMethod.POST, path = "/new")
     public ResponseEntity<?> newPlayer(@RequestBody Player player) {
 
-        game.addPlayer(player);
+        Player newPlayer = new Player();
+        newPlayer.setName(player.getName());
+
+        game.addPlayer(newPlayer);
 
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
