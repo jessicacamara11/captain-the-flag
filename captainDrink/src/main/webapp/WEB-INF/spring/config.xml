@@ -22,7 +22,7 @@
 
     <!-- Thymeleaf template resolver -->
     <bean id="templateResolver" class="org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver">
-        <property name="prefix" value="/template/"/>
+        <property name="prefix" value="/WEB-INF/template/"/>
         <property name="suffix" value=".html"/>
         <property name="templateMode" value="HTML"/>
         <property name="cacheable" value="false"/>

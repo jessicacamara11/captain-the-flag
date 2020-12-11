@@ -23,4 +23,8 @@ public class Game {
     public Card getRandomCard(){
         return deck.draw();
     }
+
+    public List<Player> getAllPlayers() {
+        return players;
+    }
 }
