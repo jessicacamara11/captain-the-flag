@@ -86,12 +86,11 @@ function createCustomer(event) {
     event.preventDefault();
     $('#form').addClass('invisible').removeClass('visible');
     $.ajax({
-        url: 'http://localhost:8080/javabank/api/customer',
-        method: 'post',
+        url: 'http://localhost:8080/captaindrink',
+        method: 'POST',
         data: JSON.stringify({
-            name: $('#name').val(),
-            email: $('#email').val(),
-            telephoneNumber: $('#phone').val()
+            name: $('#name').val()
+
         }),
         async: true,
         contentType: 'application/json',
