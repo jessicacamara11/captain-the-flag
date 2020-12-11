@@ -38,7 +38,7 @@ public class GameController {
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
-    @GetMapping("")
+    @GetMapping("/list")
     public ResponseEntity<List<Player>> listAllPlayers() {
 
         return new ResponseEntity<>(game.getAllPlayers(), HttpStatus.OK);

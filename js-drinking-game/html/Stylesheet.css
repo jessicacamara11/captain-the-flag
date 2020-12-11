@@ -1,23 +1,55 @@
-html{
-    background-image: url("https://cdn.thecoolist.com/wp-content/uploads/2017/02/California-Kings-drinking-game.png");
-}
-.center {
+
+
+.under{
     display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 200px;
-    background-image: url("https://cdn.thecoolist.com/wp-content/uploads/2017/02/California-Kings-drinking-game.png");
+    flex-direction: row;
+    justify-content: end;
+    align-content: flex-end;
+    align-self: flex-end;
+    padding-bottom: 5%;
+    padding-left: 10%;
+
+
+
+
 }
-body {
+.color {
     align-items: center;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     height: 100vh;
     justify-content: center;
     margin: 0;
     background-image: url("CaptainDrink.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: black;
+
+}
+
+#title{
+    color: white;
+    width: 200pxo;
+    margin-left: auto;
+    margin-right: auto;
+    vertical-align: middle;
+    text-align: center;
+}
+
+#div-form{
+    background-color: black;
+    height: 100vh;
+    align-items: center;
+}
+#form{
+    vertical-align: middle;
+    width: 200pxo; 
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
 }
 .button {
+
     -webkit-tap-highlight-color: transparent;
     appearance: none;
     border-radius: 100px;
@@ -33,9 +65,12 @@ body {
     padding: 1em 2em;
     position: relative;
     width: 300px;
+    align-self: flex-end;
+
 }
 .button--white {
     color: white;
+
 }
 .pattern {
     background: #f99;
