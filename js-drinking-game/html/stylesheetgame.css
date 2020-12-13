@@ -1,0 +1,215 @@
+
+* {
+    box-sizing: border-box;
+}
+.under{
+    background-image: url("table.jpg");
+    padding-top: 20vw;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    font-size: 100%;
+    height: 100%;
+    zoom: 1;
+    background-image: url("table.jpg");
+}
+
+h1, h3 {
+    display: block;
+    margin: 10px;
+}
+
+h1 {
+    color: #666;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+h3 {
+    color: #888;
+}
+
+p {
+    font-size: 1em;
+    line-height: 1.4em;
+}
+
+a {
+    color: white;
+}
+
+a, a:hover {
+    text-decoration: none;
+}
+
+blockquote {
+    color: #888;
+    margin: 20px 0 20px 20px;
+}
+
+blockquote:before,
+blockquote:after{
+    content: '"';
+}
+
+@mixin uppercase {
+    text-transform: uppercase;
+}
+
+@mixin center {
+    margin: 0 auto;
+}
+
+
+
+input[type="button"] {
+    background: blue;
+    border: none;
+    color: white;
+    text-transform: uppercase;
+    width: 100px;
+    height: 45px;
+    padding: 5px;
+    outline: 0;
+    cursor: pointer;
+    border-radius: 5px;
+
+
+
+}
+
+input.discard {
+    background: maroon;
+}
+
+/*.intro {
+  position: relative;
+  margin: 10px;
+  width: 40%;
+  height: auto;
+  color: #444;
+}*/
+#deal{
+    
+
+
+    padding-bottom: 5%;
+    padding-left: 40%;
+
+}
+
+
+
+.deck {
+   
+    background: transparent;
+    margin: 3em;
+    width: 99%;
+    height: auto;
+}
+
+.card {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    
+
+    background: transparent;
+    color: #000;
+
+   
+    cursor: pointer;
+
+}
+
+.suit {
+    position: absolute;
+    color: #AAA;
+    text-align: left;
+}
+
+.card .face {
+    
+    border: 1px solid #333;
+    color: white;
+    width: 150px;
+    height: 200px;
+    
+    text-transform: capitalize;
+    border-radius: 10px;
+
+
+
+    box-shadow: 8px 4px 10px #555; /* Slim drop shadow so as not to bleed into the bounding box of the next card  */
+}
+
+.card .front {
+    transform: rotateX(0deg) rotateY(0deg);
+    transition: all .4s ease-in-out;
+    backface-visibility: visible;
+    
+
+    
+
+}
+
+#cardRule {
+    color: white;
+    width: 50%;
+    height: 70%;
+    vertical-align: middle;
+}
+
+#player {
+    color: beige;
+}
+
+
+.card:nth-child(3) {
+    transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+    animation: drop3 .5s ease-in;
+
+}
+
+
+
+@keyframes drop3 {
+    0% {
+        transform: scale(2, 2) rotateX(0deg) rotateY(0deg) rotateZ(-50deg);
+    }
+    50% {
+        transform: rotateX(0deg) rotateY(50deg) rotateZ(25deg);
+    }
+    100% {
+        transform: scale(.98, .98) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+    }
+}
+
+
+
+.card .back {
+    background-image: url("card.png");
+    transform: rotateX(0deg) rotateY(180deg);
+    transform-style: preserve-3d;
+    transition: all .4s ease-in-out;
+    backface-visibility: hidden;
+    z-index: 5;
+}
+
+/* Flip the card and apply easing */
+.card.flip .front {
+    transform: rotateY(180deg);
+    transform-style: preserve-3d;
+    transition: all .4s ease-in-out;
+    backface-visibility: hidden;
+    z-index: 900;
+}
+
+.card.flip .back {
+    transform: rotateY(0deg);
+    transform-style: preserve-3d;
+    transition: all .4s ease-in-out;
+    backface-visibility: visible;
+    z-index: 1000;
+}
